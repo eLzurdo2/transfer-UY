@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Jugadores</title>
+</head>
+<body>
+<h1>Lista de Jugadores</h1>
+<a href="/jugadores/nuevo">Agregar Jugador</a>
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Edad</th>
+    <th>Equipo</th>
+  </tr>
+  <tr th:each="jugador : ${jugadores}">
+    <td th:text="${jugador.id}"></td>
+    <td th:text="${jugador.nombre}"></td>
+    <td th:text="${jugador.apellido}"></td>
+    <td th:text="${jugador.edad}"></td>
+    <td th:text="${jugador.equipo.nombre}"></td> <!-- Asumiendo que equipo tiene un atributo nombre -->
+  </tr>
+</table>
+</body>
+</html>

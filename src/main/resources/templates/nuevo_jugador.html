@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Jugador</title>
+</head>
+<body>
+<h1>Agregar un nuevo jugador</h1>
+<form th:action="@{/guardar}" th:object="${jugador}" method="post">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" th:field="*{nombre}" required /></br></br>
+
+    <label for="apellido">Apellido</label>
+    <input type="text" id="apellido" th:field="*{apellido}" required /></br></br> <!-- Nuevo campo para el apellido -->
+
+    <label for="edad">Edad</label>
+    <input type="number" id="edad" th:field="*{edad}" required /></br></br>
+
+    <label for="equipo">Equipo</label>
+    <select id="equipo" th:field="*{equipo}" required>
+        <option th:each="equipo : ${equipos}"
+                th:value="${equipo}"
+                th:text="${equipo.nombre}">
+        </option>
+    </select></br></br>
+
+    <button type="submit">Guardar</button>
+</form>
+</body>
+</html>
+
