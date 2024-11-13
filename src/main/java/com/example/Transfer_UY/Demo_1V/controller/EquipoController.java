@@ -25,12 +25,12 @@ public class EquipoController {
     @GetMapping("/nuevo")
     public String mostrarFormularioCrearEquipo(Model model) {
         model.addAttribute("equipo", new Equipo());
-        return "crear_equipo";
+        return "nuevo_equipo";
     }
 
     @PostMapping("/guardar")
     public String guardarEquipo(@ModelAttribute Equipo equipo) {
         equipoRepository.save(equipo);
-        return "redirect:/equipo";
+        return "redirect:/";
     }
 }

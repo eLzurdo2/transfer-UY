@@ -19,7 +19,7 @@
     <label for="equipo">Equipo</label>
     <select id="equipo" th:field="*{equipo}" required>
         <option th:each="equipo : ${equipos}"
-                th:value="${equipo}"
+                th:value="${equipo.id}"
                 th:text="${equipo.nombre}">
         </option>
     </select></br></br>
