@@ -9,22 +9,26 @@ public class Jugador {
     private Long id;
 
     private String nombre;
-    private String apellido; // Nuevo campo para el apellido
+    private String apellido; // Campo para el apellido
     private Integer edad;
 
     @ManyToOne
     @JoinColumn(name = "equipo_id")
     private Equipo equipo;
 
+    private Double valorTransferencia;
+    private String tipoTransferencia;
+
     public Jugador() {}
 
-    public Jugador(String nombre, String apellido, Integer edad, Equipo equipo) {
+    public Jugador(String nombre, String apellido, Integer edad, Equipo equipo, Double valorTransferencia, String tipoTransferencia) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
         this.equipo = equipo;
+        this.valorTransferencia = valorTransferencia;
+        this.tipoTransferencia = tipoTransferencia;
     }
-
 
     public Long getId() {
         return id;
@@ -65,6 +69,23 @@ public class Jugador {
     public void setEquipo(Equipo equipo) {
         this.equipo = equipo;
     }
+
+    public Double getValorTransferencia() {
+        return valorTransferencia;
+    }
+
+    public void setValorTransferencia(Double valorTransferencia) {
+        this.valorTransferencia = valorTransferencia;
+    }
+
+    public String getTipoTransferencia() {
+        return tipoTransferencia;
+    }
+
+    public void setTipoTransferencia(String tipoTransferencia) {
+        this.tipoTransferencia = tipoTransferencia;
+    }
 }
+
 
 

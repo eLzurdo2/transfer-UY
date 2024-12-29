@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Transferir Jugador</title>
+</head>
+<body>
+<h1>Transferir Jugador</h1>
+<form action="/transferir" method="post" th:object="${transferencia}">
+    <label for="jugadorId">Jugador ID:</label>
+    <input type="text" id="jugadorId" th:field="*{jugadorId}" required>
+
+    <label for="equipoDestinoId">Equipo Destino ID:</label>
+    <input type="text" id="equipoDestinoId" th:field="*{equipoDestinoId}" required>
+
+    <label for="valorTransferencia">Valor Transferencia:</label>
+    <input type="number" id="valorTransferencia" th:field="*{valorTransferencia}" required>
+
+    <label for="tipoTransferencia">Tipo Transferencia:</label>
+    <input type="text" id="tipoTransferencia" th:field="*{tipoTransferencia}" required>
+
+    <button type="submit">Transferir</button>
+</form>
+</body>
+</html>
